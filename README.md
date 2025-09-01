@@ -36,6 +36,34 @@ Before setting up this project, ensure you have the following installed on your 
 
 First, you need to set up a MySQL server on your local machine.
 
+  ```bash
+   pip install -r requirements.txt
+   pip install mysql-connector-python python-dotenv
+   python start_server.py
+   mysql -u root
+   CREATE DATABASE gps_tracking;
+   GRANT ALL PRIVILEGES ON gps_tracking.* TO 'gps_user'@'localhost';
+   FLUSH PRIVILEGES;
+   SHOW DATABASES;
+   EXIT;
+   mysql -u gps_user -pgps123456 gps_tracking
+   python setup_database.py
+   pass: gps123456 (example)
+---------------------------
+   mysql -u root
+   farid555
+   SELECT user, host FROM mysql.user; (is there any database)
+   CREATE USER 'iot_user'@'localhost' IDENTIFIED BY 'gps123456!';
+   GRANT ALL PRIVILEGES ON iot_storage.* TO 'iot_user'@'localhost';
+   FLUSH PRIVILEGES;
+   mysql -u root -p (Once login as root)
+   ALTER USER 'iot_user'@'localhost' IDENTIFIED BY 'gps123456!';
+   FLUSH PRIVILEGES;(logout)
+   mysql -u iot_user -p
+   gps123456!
+   CREATE DATABASE iot_storage;
+   USE iot_storage;
+   ```
 1. **Update the package index:**
 
    ```bash
