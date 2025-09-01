@@ -63,6 +63,17 @@ First, you need to set up a MySQL server on your local machine.
    gps123456!
    CREATE DATABASE iot_storage;
    USE iot_storage;
+---------------------------------
+   mysql -u iot_user -p'gps123456!' -h localhost -P 3306 -e "USE iot_storage; SHOW TABLES;"
+   mysql -u iot_user -p'gps123456!' -h localhost -P 3306 -e "USE iot_storage; SELECT COUNT(*) as user_count FROM users;"
+   mysql -u iot_user -p'gps123456!' -h localhost -P 3306 -e "USE iot_storage; SELECT id, username, email, role, is_active FROM users;"
+   mysql -u iot_user -p'gps123456!' -h localhost -P 3306 -e "USE iot_storage; DESCRIBE devices;"
+   Username: admin
+   Email: admin@gpsapp.com
+   Password: admin123456
+   Role: admin
+   Status: Active
+   
    ```
 1. **Update the package index:**
 
